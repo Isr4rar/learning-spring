@@ -32,15 +32,6 @@ public class Instantiation  implements CommandLineRunner{
 		bookRepository.deleteAll();
 		bookStoreRepository.deleteAll();
 		
-		BookStore livraria = new BookStore(null, "Livraria Digivox");
-		
-		bookStoreRepository.saveAll(Arrays.asList(livraria));
-		
-		User israel = new User(null, "Maria Eduarda", "Duda@gmail.com");
-		User gabriel = new User(null, "Gabriel Araujo", "gabriel@gmail.com");
-		User lucas = new User(null, "Lucas Araujo", "lucas@gmail.com");
-		
-		userRepository.saveAll(Arrays.asList(israel, gabriel, lucas));
 		
 		Book book_1 = new Book(null, "Star Wars - Marcas da Guerra", "Wendig, Chuck", 2015);
 		Book book_2 = new Book(null, "Star Wars - Darth Plagueis", "Luceno, James", 2012);
@@ -48,14 +39,18 @@ public class Instantiation  implements CommandLineRunner{
 		
 		bookRepository.saveAll(Arrays.asList(book_1, book_2, book_3));
 		
+		User israel = new User(null, "Maria Eduarda", "Duda@gmail.com");
+		User gabriel = new User(null, "Gabriel Araujo", "gabriel@gmail.com");
+		User lucas = new User(null, "Lucas Araujo", "lucas@gmail.com");
+		
+		
+		userRepository.saveAll(Arrays.asList(israel, gabriel, lucas));
+		
+		BookStore livraria = new BookStore(null, "Livraria Digivox");
+		livraria.getBooks().addAll(Arrays.asList(book_1,book_2,book_3));
 		livraria.getUser().addAll(Arrays.asList(israel, gabriel, lucas));
-		livraria.getBook().addAll(Arrays.asList(book_1, book_2, book_3));
 		
-		
-		bookStoreRepository.save(livraria);
-		
-		
-				
+		bookStoreRepository.saveAll(Arrays.asList(livraria));
 		
 	}
 

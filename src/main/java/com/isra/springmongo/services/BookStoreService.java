@@ -44,7 +44,7 @@ public class BookStoreService {
 	private void updateData(BookStore newObj, BookStore obj) {
 		newObj.setName(obj.getName());
 		newObj.setUser(obj.getUser());
-		newObj.setBook(obj.getBook());
+		newObj.setBooks(obj.getBooks());
 	}
 
 	public BookStore fromDTO(BookStoreDTO objDto) {

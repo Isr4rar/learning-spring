@@ -1,6 +1,8 @@
 package com.isra.springmongo.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -14,6 +16,8 @@ public class Book implements Serializable{
 	private String name;
 	private String autor;
 	private Integer ano;
+	
+	private List<User> users = new ArrayList<>();
 	
 	public Book() {
 	}
@@ -58,6 +62,14 @@ public class Book implements Serializable{
 		this.ano = ano;
 	}
 
+	public List<User> getUsers() {
+		return users;
+	}
+	
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -82,7 +94,6 @@ public class Book implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
+
 
 }

@@ -22,7 +22,7 @@ public class BookStoreDTO implements Serializable{
 		id = obj.getId();
 		name = obj.getName();
 		user = obj.getUser();
-		book = obj.getBook();
+		book = obj.getBooks();
 	}
 
 	public String getId() {

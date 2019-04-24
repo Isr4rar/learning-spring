@@ -18,9 +18,9 @@ public class BookStore implements Serializable{
 	private String name;
 	
 	@DBRef(lazy = true)
-	private List<User>  user = new ArrayList<User>();
+	private List<User>  users = new ArrayList<User>();
 	@DBRef(lazy = true)
-	private List<Book>  book = new ArrayList<Book>();
+	private List<Book>  books = new ArrayList<Book>();
 	
 	public BookStore() {
 	}
@@ -48,19 +48,19 @@ public class BookStore implements Serializable{
 	}
 
 	public List<User> getUser() {
-		return user;
+		return users;
 	}
 
 	public void setUser(List<User> user) {
-		this.user = user;
+		this.users = user;
 	}
 
-	public List<Book> getBook() {
-		return book;
+	public List<Book> getBooks() {
+		return books;
 	}
 
-	public void setBook(List<Book> book) {
-		this.book = book;
+	public void setBooks(List<Book> books) {
+		this.books = books;
 	}
 
 	@Override
